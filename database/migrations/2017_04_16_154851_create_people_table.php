@@ -40,19 +40,6 @@ class CreatePeopleTable extends Migration
 			$table->primary(['person_id','tookfrom_id']);
 		});
 
-		Schema::create('people_gaveto', function (Blueprint $table) {
-			$table->integer('person_id')->unsigned();
-			$table->integer('gaveto_id')->unsigned();
-			$table->foreign('person_id')
-			->references('id')
-			->on('people')
-			->onDelete('cascade');
-			$table->foreign('gaveto_id')
-			->references('id')
-			->on('people')
-			->onDelete('cascade');
-			$table->primary(['person_id','gaveto_id']);
-		});
 	}
 
 	/**
