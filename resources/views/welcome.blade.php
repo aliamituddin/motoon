@@ -12,14 +12,6 @@
 
   <!-- Styles -->
   <link href="/css/app.css" rel="stylesheet" type="text/css">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-
-  <script>
-  window.Laravel = <?php echo json_encode([
-    'csrfToken' => csrf_token(),
-  ]); ?>
-  </script>
-
 </head>
 <body>
   <div class="flex-center position-ref full-height">
@@ -35,6 +27,7 @@
 
   <div id="app">
     <example> </example>
+
   </div>
   <script src="/js/app.js"></script>
 </body>
