@@ -25,10 +25,10 @@
     </div>
   </div>
 
-  <div id="app">
+  <div id="root">
     <example> </example>
 
   </div>
-  <script src="/js/app.js"></script>
+  <script src="/js/index.js"></script>
 </body>
 </html>
