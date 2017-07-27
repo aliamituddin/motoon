@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 use App\source;
 use App\Book;
 use App\chapter;
+use App\hadith;
 
 class muslim extends Seeder
 {
@@ -34,6 +35,21 @@ class muslim extends Seeder
         $chapter_instance = new chapter ;
         $chapter_instance->title = $chapter['name'];
         $book_instance->chapters()->save($chapter_instance);
+
+
+        foreach ($muslim_data as $muslim_book ){
+          if (trim($muslim_book['index']) === trim($book['index']) ){
+            foreach ($muslim_book->hadith as $hadith){
+
+              if (trim($hadith['sectionindex']) === trim($chapter['index'])){
+                $hadith_instance = new hadith;
+                $hadith_instance->text = $hadith['text'];
+                $chapter_instance->hadiths()->save($hadith_instance);
+              }
+            }
+
+          }
+        }
       }
 
     }

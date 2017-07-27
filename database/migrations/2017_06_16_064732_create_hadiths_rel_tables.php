@@ -48,7 +48,7 @@ class CreateHadithsRelTables extends Migration
 			->references('id')
 			->on('chapters')
 			->onDelete('cascade');
-			$table->string('text');
+			$table->longText('text');
 			$table->timestamps();
 		});
 
