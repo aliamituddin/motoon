@@ -36,7 +36,6 @@ class muslim extends Seeder
         $chapter_instance->title = $chapter['name'];
         $book_instance->chapters()->save($chapter_instance);
 
-
         foreach ($muslim_data as $muslim_book ){
           if (trim($muslim_book['index']) === trim($book['index']) ){
             foreach ($muslim_book->hadith as $hadith){

@@ -15,8 +15,12 @@ class Book extends Model
 	public function chapters () {
 		return $this->hasMany(chapter::class);
 	}
-	
+
     public function author () {
       return $this->belongstoMany('App\People');
     }
+
+		public function source () {
+			return $this->belongsTo('App\source');
+		}
 }
