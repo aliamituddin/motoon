@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use App\source;
 use App\Book;
+use App\chapter;
 
 class muslim extends Seeder
 {
@@ -19,14 +20,22 @@ class muslim extends Seeder
     $muslim->title = "صحيح مسلم";
     $muslim->save();
 
-    $xml=simplexml_load_file("database/seeds/muslim-metadata.xml");
+    $muslim_metadata=simplexml_load_file("database/seeds/muslim-metadata.xml");
+    $muslim_data = simplexml_load_file("database/seeds/muslim.xml");
 
-
-    foreach($xml->books->book as $book)
+    foreach($muslim_metadata->books->book as $book)
     {
-      $new = new Book ;
-      $new->title = $book['name'];
-      $muslim->books()->save($new);
+      $book_instance = new Book ;
+      $book_instance->title = $book['name'];
+      $muslim->books()->save($book_instance);
+
+      foreach($book->chapter as $chapter)
+      {
+        $chapter_instance = new chapter ;
+        $chapter_instance->title = $chapter['name'];
+        $book_instance->chapters()->save($chapter_instance);
+      }
+
     }
   }
 }
