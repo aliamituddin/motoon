@@ -1,0 +1,41 @@
+{
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "arabic_analyzer": {
+            "tokenizer": "icu_tokenizer",
+            "filter": [
+              "arabic_folding",
+              "lowercase"
+            ]
+          }
+        },
+        "filter": {
+          "arabic_folding": {
+            "type": "icu_folding",
+            "unicodeSetFilter": "[ُ ّ َ ً  ٌ ِ  ٍ ْ]"
+          }
+        }
+
+      }
+    }
+  },
+  "mappings":
+  {
+    "post":
+    {
+      "properties":
+      {
+        "text":
+        {
+          "type": "text",
+          "analyzer":"arabic_analyzer",
+          "search_analyzer" : "arabic_analyzer"
+
+        }
+      }
+    }
+  }
+
+}
