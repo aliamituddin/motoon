@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('hadith', 'HadithController');
+Route::get('hadith/search/{hadith}','HadithController@search');
 
 Auth::routes();
 

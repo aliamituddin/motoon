@@ -14,7 +14,7 @@ class HadithController extends Controller
      */
     public function index()
     {
-        return "test";
+      return "sucess";
     }
 
     /**
@@ -84,5 +84,9 @@ class HadithController extends Controller
     public function destroy(hadith $hadith)
     {
         //
+    }
+    public function search ($search) {
+      $result =  \App\hadith::search($search)->paginate();
+        return $result;
     }
 }
