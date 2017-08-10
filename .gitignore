@@ -12,3 +12,4 @@ package-lock.json
 public/css
 public/js/index.js
 public/mix-manifest.json
+composer.lock

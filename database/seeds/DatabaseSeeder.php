@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
 	public function run()
 	{
 	 $this->call(muslim::class);
-	 $this->call(Bukhari::class);
+	//  $this->call(Bukhari::class);
 
 	}
 }
