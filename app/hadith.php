@@ -7,9 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class hadith extends Model
 {
-      use Searchable;
-    public function chapter (){
-      return $this->belongsTo(chapter::class);
-    }
+  use Searchable;
+  protected $hidden = array('created_at', 'updated_at');
 
+  public function chapter (){
+    return $this->belongsTo(chapter::class);
+  }
+
+  public function toSearchableArray()
+  {
+    // $chapter = $this->chapter;
+    // $book = $chapter->book;
+    // $source = $book->source;
+    // $array = $this->toArray();
+
+      // Customize array...
+
+      return [ "text" => $this->text,
+              "id"=> $this->id
+      ];
+  }
 }
