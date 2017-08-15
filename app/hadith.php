@@ -11,7 +11,7 @@ class hadith extends Model
   protected $hidden = array('created_at', 'updated_at');
 
   public function chapter (){
-    return $this->belongsTo(chapter::class);
+    return $this->belongsTo(Chapter::class);
   }
 
   public function toSearchableArray()

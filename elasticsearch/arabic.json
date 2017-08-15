@@ -1,50 +1,61 @@
 {
-  "settings": {
-    "index": {
-      "analysis": {
-        "analyzer": {
-          "arabic_analyzer": {
-            "tokenizer": "icu_tokenizer",
-            "filter": [
-              "arabic_folding",
-              "lowercase"
-            ]
-          }
-        },
-        "filter": {
-          "arabic_folding": {
-            "type": "icu_folding",
-            "unicodeSetFilter": "[ُ ّ َ ً  ٌ ِ  ٍ ْ]"
-          }
-        }
+	"settings": {
+		"index": {
+			"analysis": {
+				"analyzer": {
+					"arabic_analyzer": {
+						"tokenizer": "icu_tokenizer",
+						"filter": [
+							"lowercase",
+							"arabic_stop",
+							"arabic_normalization",
+							"arabic_stemmer",
+							"arabic_folding"
+						]
+					}
+				},
+				"filter": {
+					"arabic_folding": {
+						"type": "icu_folding",
+						"unicodeSetFilter": "[ُ ّ َ ً  ٌ ِ  ٍ ْ]"
+					},
+					"arabic_stop": {
+						"type":       "stop",
+						"stopwords":  "_arabic_"
+					},
+					"arabic_stemmer": {
+						"type":       "stemmer",
+						"language":   "arabic"
+					}
+				}
 
-      }
-    }
-  },
-  "mappings":
-  {
-    "hadiths":
-    {
-      "properties":
-      {
-        "text":{
-          "properties": {
-            "0": {
-              "analyzer":"arabic_analyzer",
-              "search_analyzer" : "arabic_analyzer",
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
-            }
-          }
-        }
+			}
+		}
+	},
+	"mappings":
+	{
+		"hadiths":
+		{
+			"properties":
+			{
+				"text":{
+					"properties": {
+						"0": {
+							"analyzer":"arabic_analyzer",
+							"search_analyzer" : "arabic_analyzer",
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						}
+					}
+				}
 
-      }
-    }
-  }
+			}
+		}
+	}
 
 }

@@ -1,7 +1,7 @@
 <?php
 use App\source;
 use App\Book;
-use App\chapter;
+use App\Chapter;
 use App\hadith;
 /*
 This function will handle resources that were imported from http://islamsource.info/
@@ -25,7 +25,7 @@ function islamsourceHadith ($title, $metadatafile , $datafile)
 
     foreach($book->chapter as $chapter)
     {
-      $chapter_instance = new chapter ;
+      $chapter_instance = new Chapter ;
       $chapter_instance->title = $chapter['name'];
       $book_instance->chapters()->save($chapter_instance);
 

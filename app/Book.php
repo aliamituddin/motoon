@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\source;
-use App\chapter;
+use App\Chapter;
 
 class Book extends Model
 {
@@ -13,7 +13,7 @@ class Book extends Model
 	// }
 
 	public function chapters () {
-		return $this->hasMany(chapter::class);
+		return $this->hasMany(Chapter::class);
 	}
 
     public function author () {
