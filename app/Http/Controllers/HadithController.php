@@ -46,9 +46,6 @@ class HadithController extends Controller
      */
     public function show(hadith $hadith)
     {
-        // $chapter = $hadith->chapter;
-        // $book = $chapter->book;
-        // $source = $book->source;
         return $hadith;
 
     }
@@ -89,6 +86,5 @@ class HadithController extends Controller
     public function search ($search) {
       $result =  \App\hadith::search($search)->paginate();
         return $result;
-        // $orders = App\Order::search('Star Trek')->raw();
     }
 }
