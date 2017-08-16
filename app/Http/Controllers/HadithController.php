@@ -46,9 +46,9 @@ class HadithController extends Controller
      */
     public function show(hadith $hadith)
     {
-        $chapter = $hadith->chapter;
-        $book = $chapter->book;
-        $source = $book->source;
+        // $chapter = $hadith->chapter;
+        // $book = $chapter->book;
+        // $source = $book->source;
         return $hadith;
 
     }
