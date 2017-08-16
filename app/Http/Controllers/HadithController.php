@@ -46,10 +46,10 @@ class HadithController extends Controller
      */
     public function show(hadith $hadith)
     {
-        // $chapter = $hadith->chapter;
-        // $book = $chapter->book;
-        // $source = $book->source;
-        return dd($hadith->toSearchableArray());
+        $chapter = $hadith->chapter;
+        $book = $chapter->book;
+        $source = $book->source;
+        return $hadith;
 
     }
 

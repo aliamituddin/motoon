@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chapter extends Model
 {
+  protected $hidden = array('created_at', 'updated_at');
+
   public function hadiths () {
     return $this->hasMany(hadith::class);
   }

@@ -11,8 +11,15 @@ class DatabaseSeeder extends Seeder
 	*/
 	public function run()
 	{
-	 $this->call(muslim::class);
-	//  $this->call(Bukhari::class);
+	// $this->call(muslim::class);
+	 // $this->call(Bukhari::class);
+		// $this->call(malik::class);
+		// $this->call(sunanibnumaja::class);
+		$this->call(sunanaltirmithi::class);
+		$this->call(sunanalnesaisughra::class);
+		$this->call(sunanabudawood::class);
+		$this->call(riyadalsaliheen::class);
+
 
 	}
 }

@@ -8,6 +8,8 @@ use App\Chapter;
 
 class Book extends Model
 {
+	protected $hidden = array('created_at', 'updated_at');
+
 	// public function source (){
 	// 	return $this->belongsTo(source::class);
 	// }
