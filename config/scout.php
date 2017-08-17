@@ -79,6 +79,25 @@ return [
     'hosts' => [
         env('ELASTICSEARCH_HOST', 'http://localhost'),
     ],
+		'initIndexParam' => [
+        'index' => config('scout.elasticsearch.index'),
+        'body' => [
+          'settings' => [
+            'number_of_shards' => 3,
+            'number_of_replicas' => 2
+          ]
+        ]
+      ],
+		'customQueryBody' =>  [
+													'query' => [
+															'bool' => [
+																	'must' => [['query_string' => [ 'query' => "text.0:___query___"]]]
+															]
+													]
+											]
+
+
+
 ],
 
 ];

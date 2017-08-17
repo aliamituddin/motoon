@@ -85,13 +85,13 @@ class HadithController extends Controller
     }
     public function search ($search) {
       $search = \App\hadith::search($search);
-      $paginate =  $search->paginate();
-      $aggregations['aggregations'] =$search->raw()['aggregations'];
-      $chapters = &$aggregations['aggregations']['chapter']['buckets'];
-      for ($i = 0 ; $i < sizeof($chapters) ; $i++){
-        $chapter = \App\chapter::find($chapters[$i]['key']);
-      $chapters[$i]['title'] = $chapter->title;
-      }
-      return array_merge($paginate->toArray(),$aggregations);
+    return  $paginate =  $search->paginate();
+      // $aggregations['aggregations'] =$search->raw()['aggregations'];
+      // $chapters = &$aggregations['aggregations']['chapter']['buckets'];
+      // for ($i = 0 ; $i < sizeof($chapters) ; $i++){
+      //   $chapter = \App\chapter::find($chapters[$i]['key']);
+      // $chapters[$i]['title'] = $chapter->title;
+      // }
+      // return array_merge($paginate->toArray(),$aggregations);
     }
 }
