@@ -84,7 +84,9 @@ class HadithController extends Controller
         //
     }
     public function search ($search) {
-      $result =  \App\hadith::search($search)->paginate();
-        return $result;
+      $search = \App\hadith::search($search);
+      $paginate =  $search->paginate();
+      $aggregations['aggregations'] =$search->raw()['aggregations'];
+      return array_merge($paginate->toArray(),$aggregations);
     }
 }

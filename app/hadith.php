@@ -24,11 +24,4 @@ class hadith extends Model
     return $this->belongsTo(Chapter::class);
   }
 
-  public function toSearchableArray()
-  {
-    return [ "text" => $this->text,
-    "id"=> $this->id
-  ];
-}
-
 }
