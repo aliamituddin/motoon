@@ -95,12 +95,24 @@ return [
 						'field' => 'chapter.id',
 						'size' =>10
 					]
+				],
+				'book' => [
+					'terms' => [
+						'field' => 'chapter.book.id',
+						'size' =>10
+					]
+				],
+				'source' => [
+					'terms' => [
+						'field' => 'chapter.book.source.id',
+						'size' =>10
+					]
 				]
 			],
 			'query' => [
 				'bool' => [
 					'must' => [
-						['query_string' => [ 'query' => "text.0:___query___" ] ] ]
+						['query_string' => [ 'query' => '___query___' ] ] ]
 				]
 			]
 		]
