@@ -116,8 +116,8 @@
 						]
 					],
 					'highlight' => [
-						'pre_tags' => ["<em>"], // not required
-						'post_tags' => ["</em>"], // not required
+						'pre_tags' => [""], // not required
+						'post_tags' => [""], // not required
 						'fields' => [
 							'text.0' => new \stdClass()
 						],

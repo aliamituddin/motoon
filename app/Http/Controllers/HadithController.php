@@ -106,6 +106,7 @@ class HadithController extends Controller
         $source = \App\source::find($sources[$i]['key']);
         $sources[$i]['title'] = $source->title;
       }
+      unset($pagesArray['data']['_shards']);
       return $pagesArray ;
     }
 }
