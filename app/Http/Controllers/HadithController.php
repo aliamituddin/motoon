@@ -85,23 +85,27 @@ class HadithController extends Controller
     }
     public function search ($search) {
       $search = \App\hadith::search($search);
-     $paginate =  $search->paginate();
-     $rawResults = $search->raw();
-     $hits = $rawResults['hits']['hits'];
-      $aggregations['aggregations'] =$search->raw()['aggregations'];
-      $chapters = &$aggregations['aggregations']['chapter']['buckets'];
+      $paginate =  $search->paginateRaw();
       $pagesArray = $paginate->toArray();
+      $aggregations = &$pagesArray['data']['aggregations'];
+      $chapters = &$aggregations['chapter']['buckets'];
+      $books = &$aggregations['book']['buckets'];
+      $sources = &$aggregations['source']['buckets'];
+
       for ($i = 0 ; $i < sizeof($chapters) ; $i++){
         $chapter = \App\Chapter::find($chapters[$i]['key']);
-      $chapters[$i]['title'] = $chapter->title;
-      }
-      for($i = 0 ; $i < sizeof($hits);$i++){
-        $data = &$pagesArray['data'][$i];
-        $highlightedText = $hits[$i]['highlight']['text.0'][0];
-        $data['highlight'] = $highlightedText;
-
+        $chapters[$i]['title'] = $chapter->title;
       }
 
-      return array_merge($pagesArray,$aggregations);
+      for ($i = 0 ; $i < sizeof($books) ; $i++){
+        $book = \App\Book::find($books[$i]['key']);
+        $books[$i]['title'] = $book->title;
+      }
+
+      for ($i = 0 ; $i < sizeof($sources) ; $i++){
+        $source = \App\source::find($sources[$i]['key']);
+        $sources[$i]['title'] = $source->title;
+      }
+      return $pagesArray ;
     }
 }
