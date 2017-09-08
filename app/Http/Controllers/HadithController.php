@@ -91,6 +91,13 @@ class HadithController extends Controller
       $chapters = &$aggregations['chapter']['buckets'];
       $books = &$aggregations['book']['buckets'];
       $sources = &$aggregations['source']['buckets'];
+      $hits = &$pagesArray['data']['hits']['hits'];
+
+      for ($i = 0 ; $i < sizeof($hits) ; $i++){
+        $highlight = &$hits[$i]['highlight'];
+        $highlight['text'] = $highlight['text.0'];
+        unset($highlight['text.0']);
+      }
 
       for ($i = 0 ; $i < sizeof($chapters) ; $i++){
         $chapter = \App\Chapter::find($chapters[$i]['key']);
