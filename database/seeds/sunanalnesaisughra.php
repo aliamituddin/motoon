@@ -12,7 +12,7 @@ class sunanalnesaisughra extends Seeder
      */
     public function run()
     {
-      islamsourceHadith("sunanalnesaisughra",
+      islamsourceHadith("سنن النسائي الصغرى",
       "database/seeds/sunan-alnesai-sughra-metadata.xml",
       "database/seeds/sunan-alnesai-sughra.xml") ;
     }

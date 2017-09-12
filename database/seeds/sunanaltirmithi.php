@@ -12,7 +12,7 @@ class sunanaltirmithi extends Seeder
      */
     public function run()
     {
-      islamsourceHadith("sunanaltirmithi",
+      islamsourceHadith("سنن الترمذي",
       "database/seeds/sunan-al-tirmithi-metadata.xml",
       "database/seeds/sunan-al-tirmithi.xml") ;
     }

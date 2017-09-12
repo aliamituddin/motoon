@@ -12,7 +12,7 @@ class riyadalsaliheen extends Seeder
      */
     public function run()
     {
-      islamsourceHadith("riyadalsaliheen",
+      islamsourceHadith("رياض الصالحين",
       "database/seeds/riyad-alsaliheen-metadata.xml",
       "database/seeds/riyad-alsaliheen.xml") ;
     }

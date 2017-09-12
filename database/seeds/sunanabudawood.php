@@ -12,7 +12,7 @@ class sunanabudawood extends Seeder
      */
     public function run()
     {
-      islamsourceHadith("sunanabudawood",
+      islamsourceHadith("سنن أبي داوود",
       "database/seeds/sunan-abu-dawood-metadata.xml",
       "database/seeds/sunan-abu-dawood.xml") ;
     }
