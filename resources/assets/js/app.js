@@ -13,9 +13,14 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
+import search from './components/Search.vue';
+// Vue.component('search', require('./components/Search.vue'));
+
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+  search
+    }
 });
- 

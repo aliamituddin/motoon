@@ -12,6 +12,13 @@
 
   <!-- Styles -->
   <link href="/css/app.css" rel="stylesheet" type="text/css">
+  <script>
+  window.Laravel = <?php echo json_encode([
+      'csrfToken' => csrf_token(),
+  ]); ?>
+
+</script>
+
 </head>
 <body>
   <div class="flex-center position-ref full-height">
@@ -19,16 +26,15 @@
 
     <div class="content">
       <div class="title m-b-md">
-        متون : لضبط وتنظيم المرويات الإسلامية
+
+قاعدة بيانات الحديث الشريف
       </div>
 
     </div>
   </div>
-
-  <div id="root">
-    <example> </example>
-
-  </div>
-  <script src="/js/index.js"></script>
+<div id ="app">
+<search> </search>
+</div>
+  <script src="/js/app.js"></script>
 </body>
 </html>
