@@ -43453,7 +43453,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      postBody: 'test',
+      postBody: '',
       hadiths: [],
       errors: []
     };
@@ -43531,7 +43531,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.postBody),
       expression: "postBody"
     }],
+    staticClass: "form-control",
     attrs: {
+      "placeholder": "اكتب نص الحديث هنا",
       "type": "text"
     },
     domProps: {

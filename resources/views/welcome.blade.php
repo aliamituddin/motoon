@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>متون : نظام لضبط المرويات الإسلامية</title>
+  <title> قاعدة بيانات الحديث الشريف | جامعة المدينة العالمية </title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -21,18 +21,10 @@
 
 </head>
 <body>
-  <div class="flex-center position-ref full-height">
-
-
-    <div class="content">
-      <div class="title m-b-md">
-
-قاعدة بيانات الحديث الشريف
-      </div>
-
-    </div>
-  </div>
-<div id ="app">
+<div class = "logo">
+<img class = "mediu-logo" src="/images/logo.png" alt="جامعة المدينة العالمية ">
+</div>
+<div id ="app" class="position-ref full-height" dir = "rtl">
 <search> </search>
 </div>
   <script src="/js/app.js"></script>
